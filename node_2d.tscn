@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bv00b3ljbg004"]
+
+[ext_resource type="PackedScene" uid="uid://df2o7awq8nbo8" path="res://scenes/classes/LifeTime.tscn" id="1_wtcfe"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="LifeTime" parent="." instance=ExtResource("1_wtcfe")]
