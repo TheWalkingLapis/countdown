@@ -1,5 +1,5 @@
 ## Player
-- [ ] detect void -> init life lost
+- [x] detect void
 - [ ] HP
 - [ ] Stamina/Sprint
 - [ ] Sprite
@@ -16,7 +16,7 @@
 - [ ] Numbers (assignment through Stage)
 
 ## Stage
-- [ ] provide void check func
+- [x] provide void check func
 - [ ] manage enemies (order!)
 
 ## Game

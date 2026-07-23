@@ -23,3 +23,17 @@ shape = SubResource("RectangleShape2D_3vyb7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("GradientTexture2D_g2els")
+
+[node name="VoidSamples" type="Node2D" parent="."]
+
+[node name="TL" type="Node2D" parent="VoidSamples"]
+position = Vector2(-24, -25)
+
+[node name="TR" type="Node2D" parent="VoidSamples"]
+position = Vector2(22, -24)
+
+[node name="BL" type="Node2D" parent="VoidSamples"]
+position = Vector2(-23, 23)
+
+[node name="BR" type="Node2D" parent="VoidSamples"]
+position = Vector2(23, 24)
