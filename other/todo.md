@@ -1,20 +1,23 @@
 ## Player
 - [x] detect void
+- [ ] void fall animation
 - [ ] HP
 - [ ] Stamina/Sprint
+- [ ] Dodgeroll?
 - [ ] Sprite
 
 ## PlayerWeapon
 - [ ] deal damage to enemies
 - [x] Sprite
 - [x] rotate according to velocity
-- [ ] have it appear on other side of screen if offscreen
+- [x] have it appear on other side of screen if offscreen
 
 ## Enemy
 - [ ] inheritance
 - [ ] Sprite(s)
 - [ ] HP
 - [ ] Numbers (assignment through Stage)
+- [ ] able to fall into void (by being pushed with sword)
 
 ## Stage
 - [x] provide void check func
