@@ -22,3 +22,4 @@ func _physics_process(_delta):
 	# rotate according to velocity vec
 	if velocity != Vector2.ZERO:
 		rotation = velocity.angle() + 0.5 * PI
+	position = Util.modulo_position(position, get_viewport_rect())

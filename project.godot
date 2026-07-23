@@ -18,11 +18,13 @@ config/icon="res://icon.svg"
 [autoload]
 
 RefManager="*res://scripts/global/RefManager.gd"
+Util="*res://scripts/global/Util.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/stretch/mode="viewport"
 
 [input]
 

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkka1dstutnp7"]
+
+[ext_resource type="Script" uid="uid://c63xodi4tlaws" path="res://scripts/player_weapon.gd" id="1_3kfca"]
+[ext_resource type="Texture2D" uid="uid://ignn7fmmueo3" path="res://assets/sword.png" id="2_bh1vq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i56rw"]
+radius = 4.0
+
+[node name="PlayerWeapon" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_3kfca")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_bh1vq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("CapsuleShape2D_i56rw")
