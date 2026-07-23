@@ -6,8 +6,9 @@
 
 ## PlayerWeapon
 - [ ] deal damage to enemies
-- [ ] Sprite
-- [ ] rotate according to velocity
+- [x] Sprite
+- [x] rotate according to velocity
+- [ ] have it appear on other side of screen if offscreen
 
 ## Enemy
 - [ ] inheritance
