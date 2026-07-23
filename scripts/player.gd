@@ -12,7 +12,9 @@ func _ready():
 	pass
 
 func get_enemy_target_pos():
-	return position
+	if !falling:
+		return position
+	return null
 
 func _physics_process(_delta):
 	if falling: 

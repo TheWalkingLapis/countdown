@@ -1,12 +1,18 @@
 extends CharacterBody2D
 class_name PlayerWeapon
 
-@export var moveSpeed := 400.0
+signal enemy_hit(enemy: Enemy)
+
+var moveSpeed := 400.0
 # multiplier for controlled movement, else is idle speed
-@export var speedMultiplier := 2.5
+var speedMultiplier := 2.5
+# multiplier for being blocked by (immortal) enemy
+var speedSlowdown := 0.5
 
 # track initial scale, beacuase of upscaling within stage/game
 @onready var initialScale := scale
+
+@onready var area2D := $Area2D
 
 var angleDrag: = 0.75
 var swordUnsheathed := false
@@ -50,6 +56,9 @@ func _physics_process(_delta):
 	var currentDir := velocity.normalized()
 	# increase speed on player input
 	var speed = moveSpeed if moveDir == Vector2.ZERO else moveSpeed * speedMultiplier
+	# is currently interacting with an enemy
+	if area2D.get_overlapping_bodies().any(func(body): return body is Enemy):
+		speed *= speedSlowdown
 	var newDir = lerp(moveDir, currentDir, angleDrag)
 	# quicker turning if moveDir and currentDir are (near) opposites
 	if moveDir.dot(currentDir) < -0.9:
@@ -62,3 +71,8 @@ func _physics_process(_delta):
 	if velocity != Vector2.ZERO:
 		rotation = velocity.angle() + 0.5 * PI
 	position = Util.modulo_position(position, get_viewport_rect())
+
+
+func _on_area_2d_body_entered(body):
+	if body is Enemy:
+		enemy_hit.emit(body)
