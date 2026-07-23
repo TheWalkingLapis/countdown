@@ -48,8 +48,13 @@ func _physics_process(_delta):
 		unsheathe(moveDir)
 	
 	var currentDir := velocity.normalized()
+	# increase speed on player input
 	var speed = moveSpeed if moveDir == Vector2.ZERO else moveSpeed * speedMultiplier
-	velocity = speed * lerp(moveDir, currentDir, angleDrag)
+	var newDir = lerp(moveDir, currentDir, angleDrag)
+	# quicker turning if moveDir and currentDir are (near) opposites
+	if moveDir.dot(currentDir) < -0.9:
+		newDir = lerp((-1 if randi() % 2 == 0 else 1) * currentDir.orthogonal(), currentDir, angleDrag)
+	velocity = speed * newDir
 	
 	move_and_slide()
 	

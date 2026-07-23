@@ -11,6 +11,7 @@
 - [x] Sprite
 - [x] rotate according to velocity
 - [x] have it appear on other side of screen if offscreen
+- [x] improve truning when dot (moveDir,oldDir) is near -1
 
 ## Enemy
 - [ ] inheritance
