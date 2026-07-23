@@ -1,7 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://bv00b3ljbg004"]
+[gd_scene load_steps=4 format=3 uid="uid://bv00b3ljbg004"]
 
-[ext_resource type="PackedScene" uid="uid://df2o7awq8nbo8" path="res://scenes/classes/LifeTime.tscn" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://coquvlxq3pc1q" path="res://node_2d.gd" id="1_epypp"]
+[ext_resource type="PackedScene" uid="uid://cse0vplpgh7hx" path="res://scenes/player.tscn" id="1_wtcfe"]
+[ext_resource type="PackedScene" uid="uid://ccw6o0ks5chyx" path="res://scenes/stage.tscn" id="2_0e48y"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_epypp")
 
-[node name="LifeTime" parent="." instance=ExtResource("1_wtcfe")]
+[node name="Stage" parent="." instance=ExtResource("2_0e48y")]
+scale = Vector2(13.515, 13.515)
+
+[node name="Player" parent="." instance=ExtResource("1_wtcfe")]
+position = Vector2(195.9519, 188.81482)

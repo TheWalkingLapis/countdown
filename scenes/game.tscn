@@ -1,0 +1,21 @@
+[gd_scene load_steps=6 format=3 uid="uid://csg43fexv7dn5"]
+
+[ext_resource type="Script" uid="uid://dypvemgsty11i" path="res://scripts/game.gd" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://ccw6o0ks5chyx" path="res://scenes/stage.tscn" id="2_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://dkka1dstutnp7" path="res://scenes/player_weapon.tscn" id="3_iywne"]
+[ext_resource type="PackedScene" uid="uid://cse0vplpgh7hx" path="res://scenes/player.tscn" id="4_p57ef"]
+[ext_resource type="PackedScene" uid="uid://1uv8mthr1awy" path="res://scenes/enemy.tscn" id="5_iywne"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_uwrxv")
+
+[node name="Stage" parent="." instance=ExtResource("2_lbhrr")]
+
+[node name="PlayerWeapon" parent="." instance=ExtResource("3_iywne")]
+position = Vector2(411, 186)
+
+[node name="Player" parent="." instance=ExtResource("4_p57ef")]
+position = Vector2(252, 230)
+
+[node name="Enemy" parent="." instance=ExtResource("5_iywne")]
+position = Vector2(1580, 294)
